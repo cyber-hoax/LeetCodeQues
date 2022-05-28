@@ -38,13 +38,37 @@ class Solution {
         
     }
     
+    vector<string> paths ;
+    void topDown (TreeNode* root, string s){
+        if(!root){
+            return ;
+        }
+        
+        
+          string temp = s+ (s.length() == 0  ? "" :  "->")+to_string(root->val);
+        if(root->left == NULL && root->right ==NULL ){
+            paths.push_back(temp);
+            return ;
+        }
+        
+         topDown(root->left, temp);
+        topDown(root->right, temp);
+        
+        
+        
+        
+    }
+    
+    
+    
 public:
     vector<string> binaryTreePaths(TreeNode* root) {
         
         
-        vector<string> v = binaryTree(root);
+//         vector<string> v = binaryTree(root);
+        topDown(root, "");
         
-        return v;
+        return paths;
         
     }
 };
