@@ -10,16 +10,23 @@
  * };
  */
 class Solution {
+    TreeNode* curr = new TreeNode(0);
     
-
+    void helper(TreeNode* root){
+        if(!root)
+            return ;
+        
+        helper(root->left);
+        root->left = NULL;
+        curr->right = root;
+        curr = root ;
+        helper(root->right);
+    }
+    
 public:
-       TreeNode* increasingBST(TreeNode* root, TreeNode* tail = NULL) {
-       if(!root)
-           return tail;
-       
-       TreeNode* ans = increasingBST(root->left , root);
-       root->left = NULL;
-       root->right = increasingBST(root->right , tail);
-          return ans;
+    TreeNode* increasingBST(TreeNode* root) {
+        TreeNode * ans = curr ;
+        helper(root);
+        return ans->right;        
     }
 };
