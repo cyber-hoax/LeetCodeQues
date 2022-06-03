@@ -10,18 +10,35 @@
  * };
  */
 class Solution {
-public:
-    int findBottomLeftValue(TreeNode* root) {
-        queue<TreeNode*> q;
-        q.push(root);
-        TreeNode * curr;
-        while(!q.empty()){
-            curr = q.front();
-            q.pop();
-            if(curr->right !=NULL) q.push(curr->right);
-            if(curr->left !=NULL) q.push(curr->left);
+    
+    void dfs(TreeNode* root, int depth, int &height, int&res){
+        if(!root)
+            return ;
+        if(depth > height){
+            res= root->val;
+            height =depth;
             
         }
-        return curr->val;
+        dfs(root->left, depth+1, height, res);
+        dfs(root->right, depth+1, height, res);
+    }
+public:
+    int findBottomLeftValue(TreeNode* root) {
+//         queue<TreeNode*> q;
+//         q.push(root);
+//         TreeNode * curr;
+//         while(!q.empty()){
+//             curr = q.front();
+//             q.pop();
+//             if(curr->right !=NULL) q.push(curr->right);
+//             if(curr->left !=NULL) q.push(curr->left);
+            
+//         }
+//         return curr->val;
+        
+        int bottomLeft = 0 ; 
+        int height = 0;
+        dfs(root, 1, height, bottomLeft );
+        return bottomLeft;
     }
 };
