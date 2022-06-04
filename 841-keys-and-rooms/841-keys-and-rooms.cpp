@@ -16,9 +16,6 @@ public:
         vector<int>  vis(n, 0 );
         dfs(rooms, 0, c, vis);
         
-        if(n == c)
-            return true;
-        else
-            return false;
+        return n==c ? true : false ;
     }
 };
