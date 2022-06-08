@@ -9,7 +9,6 @@ public:
         
         sl.insert(nums[i]);
     }
-    
     for(int j = 0 ; j < n ; j++){
         
         if(sl.find(nums[j] -1) == sl.end()){
@@ -18,8 +17,7 @@ public:
             
             while(sl.find(k) != sl.end())
                 k++;
-            ans = max(ans, k - nums[j]);
-            
+            ans = max(ans, k - nums[j]);     
         }
     }
     return ans;
