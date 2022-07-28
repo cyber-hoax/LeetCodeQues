@@ -14,11 +14,9 @@ public:
     void reorderList(ListNode* head) {
         
         stack<ListNode*> pt;
-        int size = 0;
         ListNode* curr = head;
         while(curr != NULL){
             pt.push(curr);
-            size ++ ; 
             curr = curr->next;
         }
         
