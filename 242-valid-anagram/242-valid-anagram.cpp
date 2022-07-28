@@ -20,14 +20,19 @@ public:
 //             }
 //         }
         
-         int n = s.length();
-        int counts[26] = {0};
-        for (int i = 0; i < n; i++) { 
-            counts[s[i] - 'a']++;
-            counts[t[i] - 'a']--;
+        int count[26] = {0};
+        
+        for(int i =0 ;i<s.size(); i++){
+            count[s[i] - 'a'] ++ ;
+            count[t[i] - 'a'] -- ;
+            
         }
-        for (int i = 0; i < 26; i++)
-            if (counts[i]) return false;
+        
+        for(int i = 0 ; i<26 ; i++){
+            if(count[i]) 
+                return false;
+        }
+        
         return true;
     }
 };
