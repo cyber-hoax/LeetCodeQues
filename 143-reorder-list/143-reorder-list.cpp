@@ -24,7 +24,7 @@ public:
         
         
         ListNode* ptr = head;
-        for(int i = 0 ; i < size/2 ; i++ ){
+        for(int i = 0 ; i < pt.size(); i++ ){
             ListNode * temp = pt.top();
             pt.pop();
             temp->next = ptr->next;
