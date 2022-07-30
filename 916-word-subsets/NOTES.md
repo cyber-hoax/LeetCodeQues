@@ -1,0 +1,2 @@
+so idea is two build one freq list for every word and build max. freq for every string present in B.
+then make on fre list for A vector and match whether its eual to greater than the max freq array element
