@@ -16,6 +16,6 @@ public:
           if(sum < abs(S) || (sum + S) % 2 ==1)
               return 0;
           else
-              return helper(nums, (sum+S) /2 );
+              return helper(nums, (sum+S) >>1 );
       }
 };
