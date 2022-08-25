@@ -1,12 +1,12 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<int, int> mp;
+        vector<int> mp (126,0);
         for(auto x: magazine)
             mp[x]++;
         
         for(auto x: ransomNote){
-            if(mp.find(x) != mp.end() && mp[x] >0){
+            if(mp[x] >0){
                 mp[x] -- ;
             }
              else
