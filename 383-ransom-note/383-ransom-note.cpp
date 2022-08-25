@@ -6,11 +6,8 @@ public:
             mp[x]++;
         
         for(auto x: ransomNote){
-            if(mp[x] >0){
-                mp[x] -- ;
-            }
-             else
-                 return false;
+            if(mp[x] >0) mp[x] -- ;
+             else return false;
         }
         return true;
     }
