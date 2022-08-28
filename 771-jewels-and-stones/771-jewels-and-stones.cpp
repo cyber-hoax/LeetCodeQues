@@ -2,7 +2,7 @@ class Solution {
 public:
     int numJewelsInStones(string jewels, string stones) {
         int count = 0 ;
-        unordered_set<int> s;
+        unordered_set<int> s(53);
         for(auto x : jewels)
             s.insert(x);
         
