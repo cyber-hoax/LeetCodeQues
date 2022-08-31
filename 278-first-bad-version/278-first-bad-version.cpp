@@ -6,7 +6,7 @@ public:
     int firstBadVersion(int n) {
         int low = 1 , high =  n , mid;
         while(low < high){
-             mid =  low + (high - low) /2;
+             mid = ((unsigned int)low + (unsigned int)high) >> 1;
             if(!isBadVersion(mid))
                 low = mid + 1;
             else high = mid;
@@ -15,10 +15,3 @@ public:
     }
     
 };
-// };\\\int lower = 1, upper = n, mid;
-//         while(lower < upper) {
-//             mid = lower + (upper - lower) / 2;
-//             if(!isBadVersion(mid)) lower = mid + 1;   /* Only one call to API */
-//             else upper = mid;
-//         }
-//         return lower;   
