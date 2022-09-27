@@ -3,7 +3,7 @@ public:
     string longestPalindrome(string s) {
         int start = 0 , end = 0 , maxLen = 1;
         
-        for(int i = 0 ; i < s.size()-1; ++i){
+        for(int i = 0 ; i < s.size(); ++i){
             int l = i, r= i;
             while(l>=0 && r<s.size() && s[l] == s[r]){
                 r++;
