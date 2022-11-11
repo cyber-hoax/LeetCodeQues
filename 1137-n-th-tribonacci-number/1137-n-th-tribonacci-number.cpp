@@ -1,17 +1,11 @@
 class Solution {
 public:
-      int t0=0, t1=1, t2=1;
-    long long int arr[38]={0};
+   
     int tribonacci(int n) {
         
-        if(n==0)
-            return t0;
-        if(n==1)
-            return t1;
-        if(n==2)
-            return t2;
-        if(arr[n]!=0)
-            return arr[n];
-        return arr[n]=tribonacci(n-3)+tribonacci(n-2)+tribonacci(n-1);
+          int dp[] = {0, 1, 1};
+        for (int i = 3; i <= n; ++i)
+            dp[i % 3] = dp[0] + dp[1] + dp[2];
+        return dp[n % 3];
     }
 };
