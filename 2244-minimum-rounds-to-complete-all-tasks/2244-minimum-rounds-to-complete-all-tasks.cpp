@@ -20,10 +20,10 @@ class Solution
                     count += it.second / 3;
 
                 else
-                {
+                
                     count += it.second / 3 + 1;
-                    mp[it.first] -= 2;
-                }
+                   
+                
             }
 
             return count;
